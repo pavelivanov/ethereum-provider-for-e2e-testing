@@ -1,0 +1,36 @@
+{
+  "name": "ethereum-provider-for-e2e-testing",
+  "version": "0.0.0",
+  "author": "Pavel Ivanov <grammka@gmail.com> (https://pavelivanov.info/)",
+  "contributors": [
+    "Giorgri Kobulashvili <webdevra@bk.ru> (https://github.com/gkio)"
+  ],
+  "description": "Ethereum provider for E2E testing",
+  "homepage": "https://github.com/pavelivanov/ethereum-provider-for-e2e-testing#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavelivanov/ethereum-provider-for-e2e-testing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pavelivanov/ethereum-provider-for-e2e-testing/issues"
+  },
+  "keywords": [
+    "ethereum",
+    "provider",
+    "e2e",
+    "tests",
+    "testing"
+  ],
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "license": "ISC",
+  "module": "dist/index.es.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {},
+  "peerDependencies": {},
+  "devDependencies": {},
+  "dependencies": {}
+}
