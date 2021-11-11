@@ -3,6 +3,7 @@ import { Web3ReactProvider } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
 
 import '../styles/globals.css'
+import {useEffect} from "react";
 
 
 const getWeb3ReactLibrary = (provider: any, connector: any) => {
