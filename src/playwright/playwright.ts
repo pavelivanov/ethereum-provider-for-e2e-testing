@@ -41,7 +41,6 @@ export class WalletProviderPlaywright extends WalletProvider {
   }
 
   connect = async (selectedAccount: string) => {
-    debugger;
     await this.changeAccount(selectedAccount)
   }
 }
