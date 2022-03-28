@@ -5,9 +5,8 @@ import { InjectedConnector } from '@web3-react/injected-connector'
 import { formatEther, parseEther } from '@ethersproject/units'
 import type { Web3Provider } from '@ethersproject/providers'
 
-
 const injected = new InjectedConnector({
-  supportedChainIds: [ 4 ],
+  supportedChainIds: [ 1, 4, 1337 ],
 })
 
 const Account = () => {
@@ -25,13 +24,13 @@ const Account = () => {
     return (
       <div>
         {account}
-        <button data-testid="disconnectButton" onClick={handleDisconnectClick}>Disconnect</button>
+        <button data-testid="disconnect-button" onClick={handleDisconnectClick}>Disconnect</button>
       </div>
     )
   }
 
   return (
-    <button data-testid="connectButton" onClick={handleConnectClick}>Connect</button>
+    <button data-testid="connect-button" onClick={handleConnectClick}>Connect</button>
   )
 }
 
@@ -69,7 +68,7 @@ const Transfer = () => {
     const recipient = recipientInputRef.current.value
 
     const signer = library.getSigner()
-
+    console.log(signer)
     const receipt = await signer.sendTransaction({
       to: recipient,
       value: parseEther(amount),
@@ -90,12 +89,12 @@ const Transfer = () => {
         )
       }
       <div>
-        Balance: {balance === '' ? null : <span data-testid="balanceValue">{balance}</span>} ETH
+        Balance: {balance === '' ? null : <span data-testid="balance-value">{balance}</span>} ETH
       </div>
       <form onSubmit={handleSubmit}>
-        <input ref={amountInputRef} type="text" placeholder="Amount" />
-        <input ref={recipientInputRef} type="text" placeholder="Recipient address" />
-        <button type="submit" data-testid="transferButton">Transfer</button>
+        <input ref={amountInputRef} data-testid="amount-input" type="text" placeholder="Amount" />
+        <input ref={recipientInputRef} data-testid="address-input" type="text" placeholder="Recipient address" />
+        <button type="submit" data-testid="transfer-button">Transfer</button>
       </form>
     </div>
   )
